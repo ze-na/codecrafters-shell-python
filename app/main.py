@@ -7,7 +7,10 @@ def main():
         command = input()
         if (command == "exit"):
             break
-        print(f"{command}: command not found")
+        elif command.startswith("echo "):
+            sys.stdout.write(command[5:] + "\n")
+        else: 
+            print(f"{command}: command not found")
 
 
 if __name__ == "__main__":
