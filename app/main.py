@@ -6,8 +6,7 @@ commands = {
     "echo": lambda line: print(line[5:]),
     "type": lambda line: print(f"{args} is a shell builtin")
     if (args := "".join(line.split()[1:])) in commands
-    else #findDir(line)
-     print(f"{args}: not found")
+    else print(f"{args}: not found")
 }
 
 def findDir(program):
