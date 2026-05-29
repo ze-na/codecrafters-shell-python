@@ -6,14 +6,16 @@ commands = {
     "echo": lambda line: print(line[5:]),
     "type": lambda line: print(f"{args} is a shell builtin")
     if (args := "".join(line.split()[1:])) in commands
-    else print(f"{args}: not found")
+    else #findDir(line)
+     print(f"{args}: not found")
 }
 
-# def findDir():
-#     directories = PATH.split(os.pathsep)
+def findDir(program):
+    #look through path from left to right to find program
+    directories = PATH.split(os.pathsep)
+    os.pathsep #path separater
 
-#     os.pathsep #path separater
-#     os.access(path, os.X_OK) #execute permission boolean
+    os.access(path, os.X_OK) #execute permission boolean
 
 
 def main():
