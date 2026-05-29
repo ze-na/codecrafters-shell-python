@@ -14,7 +14,7 @@ def findDir(program):
     PATH = os.environ['PATH']
     directories = PATH.split(os.pathsep) # split with path separater
     if (program in directories): # check if program is in PATH and #execute permission boolean
-        if os.access(PATH, os.X_OK):
+        if os.access(program, os.X_OK):
             print(f"{program} is {PATH}")
         else:
             print(f"{program}: not found")
