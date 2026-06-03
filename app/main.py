@@ -8,7 +8,7 @@ PATHSEP = os.pathsep
 
 
 def main():
-    time.sleep(5)
+    time.sleep(50)
     while True:
         sys.stdout.write("$ ")
         command = input()
