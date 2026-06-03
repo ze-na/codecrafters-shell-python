@@ -11,7 +11,7 @@ commands = {
 
 def findDir(program):
     #todo: remember the path to get to program.
-    programPATH = ""
+    programPATH = os.pathsep
     #look through path from left to right to find program
     PATH = os.environ['PATH']
     directories = PATH.split(os.pathsep) # split with path separater
