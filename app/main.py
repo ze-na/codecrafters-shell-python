@@ -16,7 +16,7 @@ def findDir(program):
     PATH = os.environ['PATH']
     directories = PATH.split(os.pathsep) # split with path separater
     if (program in directories): # check if program is in PATH and #execute permission boolean
-        
+        print(f"test, program = {program} programPath = {programPATH}")
         for x in directories:
             if (x == program):
                 break
