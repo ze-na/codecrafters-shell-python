@@ -18,9 +18,9 @@ def findDir(program):
     directories = PATH.split(os.pathsep) # split with path separater
     
     for x in directories:
-        print(f"test, directories = {x}")
+        # print(f"test, directories = {x}")
     if (program in directories): # check if program is in PATH and #execute permission boolean
-        print(f"test, program = {program} programPath = {programPATH}")
+        # print(f"test, program = {program} programPath = {programPATH}")
         for x in directories:
             if (x == program):
                 break
@@ -31,7 +31,7 @@ def findDir(program):
         else:
             print(f"{program}: not found")
     else: 
-        print(f"test, program = {program} flop ")
+        # print(f"test, program = {program} flop ")
         print(f"{program}: not found")
         
 
