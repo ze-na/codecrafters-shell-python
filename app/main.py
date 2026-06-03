@@ -27,6 +27,7 @@ def findDir(program):
         else:
             print(f"{program}: not found")
     else: 
+        print(f"test, program = {program} flop ")
         print(f"{program}: not found")
         
 
