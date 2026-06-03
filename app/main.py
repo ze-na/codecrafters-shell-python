@@ -1,53 +1,31 @@
 import sys
-import os
-
-commands = {
-    "exit": lambda line: sys.exit(0),
-    "echo": lambda line: print(line[5:]),
-    "type": lambda line: print(f"{args} is a shell builtin")
-    if (args := "".join(line.split()[1:])) in commands
-    else findDir(line[5:]) #print(f"{args}: not found") 
-}
-
-def findDir(program):
-    #todo: remember the path to get to program.
-    programPATH = os.pathsep
-    #look through path from left to right to find program
-    PATH = os.environ.get("PATH", "")
-    # print(f"test, PATH = {PATH}")
-    directories = PATH.split(os.pathsep) # split with path separater
-    
-    # for x in directories:
-    #     print(f"test, directories = {x}")
-    if (program in directories): # check if program is in PATH and #execute permission boolean
-        # print(f"test, program = {program} programPath = {programPATH}")
-        for x in directories:
-            if (x == program):
-                break
-            programPATH = programPATH + os.pathsep + x
-        
-        if os.access(programPATH, os.X_OK):
-            print(f"{program} is {programPATH}")
-        else:
-            print(f"{program}: not found")
-    else: 
-        # print(f"test, program = {program} flop ")
-        print(f"{program}: not found")
-        
+import shutil
 
 
 def main():
+    builtin = ["echo", "exit", "type"]
+
     while True:
         sys.stdout.write("$ ")
 
-        line = input()
+        command: str = input()
+        if command == "exit":
+            break
 
-        for command in commands:
-            if line.startswith(command):
-                commands[command](line)
-                break
+        elif command.startswith("echo "):
+            print(command.removeprefix("echo "))
+
+        elif command.startswith("type "):
+            bic: str = command.removeprefix("type ")
+            if bic in builtin:
+                print(f"{bic} is a shell builtin")
+            elif shutil.which(bic):
+                print(f"{bic} is {shutil.which(bic)}")
+            else:
+                print(f"{bic}: not found")
+
         else:
-            sys.stderr.write(f"{line}: command not found\n")
+            print(f"{command}: command not found")
 
 
 if __name__ == "__main__":
