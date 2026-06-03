@@ -13,9 +13,10 @@ def findDir(program):
     #todo: remember the path to get to program.
     programPATH = os.pathsep
     #look through path from left to right to find program
-    PATH = os.environ['PATH']
+    PATH = os.environ.get("PATH", "")
     print(f"test, PATH = {PATH}")
     directories = PATH.split(os.pathsep) # split with path separater
+    
     for x in directories:
         print(f"test, directories = {x}")
     if (program in directories): # check if program is in PATH and #execute permission boolean
