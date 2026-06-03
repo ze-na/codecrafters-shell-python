@@ -22,6 +22,8 @@ def main():
                 for dir in PATH.split(os.pathsep):
                     full_path = os.path.join(dir, cmd)
                     print(full_path)
+                    while True:
+                        input()
                     if os.path.isfile(full_path) and os.access(full_path, os.X_OK):
                         print(f"{cmd} is {full_path}")
                         break
