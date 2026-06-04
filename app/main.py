@@ -32,7 +32,7 @@ def find_dir(program):
     
         if os.path.exists(program_path) and os.access(program_path, os.X_OK):
             print(f"{program} is {program_path}")
-            exit()
+            return
         # else:
         #     print(f"{program}: not found")
         #     exit()
