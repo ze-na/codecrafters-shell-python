@@ -10,7 +10,8 @@ commands = {
 }
 
 def get_path_directories():
-    return os.environ['PATH'].split(os.pathsep)
+    directories = os.environ['PATH'].split(os.pathsep)
+    return directories
 
 def find_dir(program):
     directories = get_path_directories
