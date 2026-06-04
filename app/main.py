@@ -14,7 +14,7 @@ def find_dir(program):
     #program_path = os.pathsep
     #look through path from left to right to find program
     PATH = os.environ['PATH']
-    print(f"test, PATH = {PATH}")
+    # print(f"test, PATH = {PATH}")
     directories = PATH.split(os.pathsep) # split with path separater
     
     # for x in directories:
