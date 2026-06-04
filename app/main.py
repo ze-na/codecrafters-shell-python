@@ -9,11 +9,11 @@ commands = {
     else find_dir(line[5:])
 }
 
-
+def get_path_directories():
+    return os.environ['PATH'].split(os.pathsep)
 
 def find_dir(program):
     directories = get_path_directories()
-    # directories = os.environ['PATH'].split(os.pathsep)
 
     for directory_path in directories:
         program_path = os.path.join(directory_path, program)
@@ -24,9 +24,6 @@ def find_dir(program):
     else: 
         print(f"{program}: not found")
         
-def get_path_directories():
-    directories = os.environ['PATH'].split(os.pathsep)
-    return directories
 
 def main():
     while True:
