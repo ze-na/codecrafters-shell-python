@@ -10,10 +10,10 @@ commands = {
 }
 
 def run_external(line):
-    program_composition = line.split()
+    input = line.split()
     program = input[0]
     found, program_path = program_found(program)
-    program_composition = program_composition.append(program_path)
+    program_composition = input.append(program_path)
     if found:
         for arg in input[1:]:
             print(f"printing arg: {arg}")
