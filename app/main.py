@@ -1,7 +1,7 @@
 import sys
 import os
 import os.system
-import os.spawn*
+# import os.spawn*
 
 commands = {
     "exit": lambda line: sys.exit(0),
