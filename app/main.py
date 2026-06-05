@@ -15,9 +15,9 @@ def run_external(line):
     found, program_path = program_found(program)
     if found:
         for arg in input[1:]:
-        print(f"printing arg: {arg}")
+            print(f"printing arg: {arg}")
     else:    
-    sys.stderr.write(f"{line}: command not found\n")
+        sys.stderr.write(f"{line}: command not found\n")
 
         
 
