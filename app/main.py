@@ -14,7 +14,7 @@ def run_external(line):
     input = line.split()
     program = input[0]
     found, program_path = program_found(program)
-    program_composition = "./" + program_composition
+    program_composition = "./" + program_path
     
     # program_composition = input.append(program_path)
     if found:
