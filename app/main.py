@@ -18,8 +18,8 @@ def run_external(line):
     
     # program_composition = input.append(program_path)
     if found:
-        for arg in input[1:]:    
-            program_composition = program_composition + " " + arg
+        # for arg in input[1:]:    
+        #     program_composition = program_composition + " " + arg
         # os.subprocess.run(["ls", "-l", "/dev/null"], capture_output=True)
         print(f"pprogram_compostition: {program_composition}")    
         subprocess.run(program_composition, capture_output=True)
