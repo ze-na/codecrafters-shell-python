@@ -1,5 +1,6 @@
 import sys
 import os
+import subprocess
 
 commands = {
     "exit": lambda line: sys.exit(0),
@@ -21,7 +22,7 @@ def run_external(line):
             print(f"printing arg: {arg}")        
             program_composition = program_composition + " " + arg
         # os.subprocess.run(["ls", "-l", "/dev/null"], capture_output=True)
-        os.subprocess.run(program_composition, capture_output=True)
+        subprocess.run(program_composition, capture_output=True)
     else:    
         sys.stderr.write(f"{line}: command not found\n")
 
