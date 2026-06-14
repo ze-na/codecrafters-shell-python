@@ -23,7 +23,7 @@ def run_external(line):
         #     program_composition = program_composition + " " + arg
         # os.subprocess.run(["ls", "-l", "/dev/null"], capture_output=True)
         print(f"pprogram_compostition: {program_composition}")    
-        subprocess.run(program_composition, capture_output=True)
+        subprocess.run(program, capture_output=True)
     else:    
         sys.stderr.write(f"{line}: command not found\n")
 
