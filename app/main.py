@@ -17,7 +17,7 @@ def run_external(line):
     program_composition = ""
     
     for arg in input:
-        program_composition = program_composition + arg
+        program_composition = program_composition + " " + arg
     
     # program_composition = input.append(program_path)
     if found:
