@@ -8,7 +8,7 @@ commands = {
     "type": lambda line: print(f"{args} is a shell builtin")
     if (args := "".join(line.split()[1:])) in commands
     else find_type(line[5:]),
-    "pwd": lambda line: os.getcwd()
+    "pwd": lambda line: print(f"{os.getcwd()}")
 }
 
 def run_external(line):
