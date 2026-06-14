@@ -18,12 +18,12 @@ def run_external(line):
     if found: 
         subprocess.run(input)
     else:    
-        sys.stderr.write(f"{line}: command not found\n")
+        sys.stderr.write(f"{line}: command not found\n")        
 
-        
 
 def get_path_directories():
     return os.environ['PATH'].split(os.pathsep)
+        
         
 def program_found(program):
     directories = get_path_directories()
@@ -34,11 +34,10 @@ def program_found(program):
         program_path = os.path.join(directory_path, program)
         
         if os.path.exists(program_path) and os.access(program_path, os.X_OK):
-            # print(f"{program} is {program_path}")
             return True, program_path
     else: 
         return False, program_path
-        # print(f"{program}: not found")
+
 
 def find_type(program):
     found, program_path = program_found(program)
@@ -46,17 +45,6 @@ def find_type(program):
         print(f"{program} is {program_path}")
     else:
         print(f"{program}: not found")
-        
-    # directories = get_path_directories()
-
-    # for directory_path in directories:
-    #     program_path = os.path.join(directory_path, program)
-        
-    #     if os.path.exists(program_path) and os.access(program_path, os.X_OK):
-    #         print(f"{program} is {program_path}")
-    #         return
-    # else: 
-    #     print(f"{program}: not found")
         
 
 def main():
