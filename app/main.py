@@ -7,7 +7,8 @@ commands = {
     "echo": lambda line: print(line[5:]),
     "type": lambda line: print(f"{args} is a shell builtin")
     if (args := "".join(line.split()[1:])) in commands
-    else find_type(line[5:])
+    else find_type(line[5:]),
+    "pwd": lambda line: os.getcwd()
 }
 
 def run_external(line):
@@ -59,7 +60,6 @@ def main():
                 break
         else:
             run_external(line)
-            # sys.stderr.write(f"{line}: command not found\n")
 
 
 if __name__ == "__main__":
