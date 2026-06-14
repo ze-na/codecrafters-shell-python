@@ -14,9 +14,9 @@ def run_external(line):
     input = line.split(" ")
     program = input[0]
     found, program_path = program_found(program)
-    program_composition = ""
+    program_composition = program
     
-    for arg in input:
+    for arg in input[1:]:
         program_composition = program_composition + " " + arg
     
     # program_composition = input.append(program_path)
