@@ -15,8 +15,9 @@ commands = {
 
 def change_dir(path):
     if (path == "~"):
-        os.chdir(pathlib.Path.home())
-    elif (os.access(path = path, mode = os.F_OK)):
+        path = pathlib.Path.home()
+
+    if (os.access(path = path, mode = os.F_OK)):
         os.chdir(path)
     else:
         print(f"cd: {path}: No such file or directory")
