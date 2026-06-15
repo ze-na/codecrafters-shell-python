@@ -1,6 +1,7 @@
 import sys
 import os
 import subprocess
+import pathlib
 
 commands = {
     "exit": lambda line: sys.exit(0),
@@ -13,7 +14,9 @@ commands = {
 }
 
 def change_dir(path):
-    if (os.access(path = path, mode = os.F_OK)):
+    if (path == "~"):
+        os.chdir(pathlib.Path.home())
+    elif (os.access(path = path, mode = os.F_OK)):
         os.chdir(path)
     else:
         print(f"cd: {path}: No such file or directory")
