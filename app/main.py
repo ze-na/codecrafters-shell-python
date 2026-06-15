@@ -8,7 +8,10 @@ commands = {
     "type": lambda line: print(f"{args} is a shell builtin")
     if (args := "".join(line.split()[1:])) in commands
     else find_type(line[5:]),
-    "pwd": lambda line: print(f"{os.getcwd()}")
+    "pwd": lambda line: print(f"{os.getcwd()}"),
+    "cd": lambda line: os.chdir(line[3:])
+    if (os.access(path = line[3:], mode = os.F_OK))
+    else print(f"cd: {line[3:]}: No such file or directory")
 }
 
 def run_external(line):
